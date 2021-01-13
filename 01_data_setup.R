@@ -7,7 +7,7 @@
 set.seed(131)
 
 #set paths
-patH <- "/home/gabriele/final/"
+patH <- "/home/cbmc/wnnets/"
 
 #read data
 originalNOT <- read.table(paste0(patH, "original_data_no_normalisation.csv"), header=T, sep="\t", stringsAsFactors=T, dec=",")

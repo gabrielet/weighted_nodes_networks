@@ -11,7 +11,7 @@ library("gtools")
 set.seed(131)
 
 #set path
-patH <- "/home/gabriele/final/"
+patH <- "/home/cbmc/wnnets/"
 
 #load data
 filteredData <- read.csv(paste0(patH, "node_table.csv"), sep="\t", header=T, stringsAsFactors=T)

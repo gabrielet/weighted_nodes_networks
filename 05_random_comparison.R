@@ -15,8 +15,8 @@ loadfonts()
 set.seed(131)
 
 #set paths
-patH <- "/home/gabriele/final/"
-saveIn <- "/home/gabriele/final/figures/"
+patH <- "/home/cbmc/wnnets/"
+saveIn <- "/home/cbmc/wnnets/figures/"
 
 #set palette with 8 colours for colouring plots
 colorsPal <- brewer.pal(8, "Set2")

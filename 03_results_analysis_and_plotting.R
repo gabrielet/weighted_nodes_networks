@@ -19,8 +19,8 @@ loadfonts()
 set.seed(131)
 
 #set paths
-patH <- "/home/gabriele/final/"
-saveIn <- "/home/gabriele/final/figures/"
+patH <- "/home/cbmc/wnnets/"
+saveIn <- "/home/cbmc/wnnets/figures/"
 
 #read data from R
 originalRes <- read.table(paste0(patH, "degreeS.csv"), header=T, sep="\t", stringsAsFactors=T)

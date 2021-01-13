@@ -16,8 +16,8 @@ loadfonts()
 set.seed(131)
 
 #set paths
-patH <- "/home/gabriele/final/"
-saveIn <- "/home/gabriele/final/figures/"
+patH <- "/home/cbmc/wnnets/"
+saveIn <- "/home/cbmc/wnnets/figures/"
 
 ############################################################# PLOTTING DEGREE EXAMPLE BARPLOT
 
