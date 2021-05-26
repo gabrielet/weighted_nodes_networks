@@ -1,6 +1,6 @@
 #############
 # GabrieleT #
-#   2020    #
+#   2021    #
 #############
 
 #load libraries
@@ -16,10 +16,10 @@ loadfonts()
 set.seed(131)
 
 #set paths
-patH <- "/home/cbmc/wnnets/"
-saveIn <- "/home/cbmc/wnnets/figures/"
+patH <- "~/WNNets/"
+saveIn <- "~/WNNets/figures/"
 
-############################################################# PLOTTING DEGREE EXAMPLE BARPLOT
+########################################## plot degree example barplot
 
 #set palette with 8 colours for colouring plots
 coloursPal <- brewer.pal(8, "Set2")
@@ -125,82 +125,6 @@ plot.igraph(g,
 )
 dev.off()
 
-########################################## plot networks with coloured nodes MULTI FIVE COMPLETE
-
-df <- data.frame("from"=c("1", "2", "3", "3", "4", "5", "5", "5.1", "5.1", "5.1", "5.2", "5.2"), 
-	"to"=c("2", "3", "4", "5", "5", "5.1", "5.2", "5.2", "3", "4", "3", "4"))
-
-meta <- data.frame("name"=c("1", "2", "3", "4", "5", "5.1", "5.2"), 
-	"x"=c(5, 8, 12, 9, 7, 5, 6),
-	"y"=c(7, 5, 8, 12, 9, 11, 13))
-
-g <- graph.data.frame(df, directed=FALSE, vertices=meta)
-lo <- layout.norm(as.matrix(meta[,2:3]))
-
-V(g)$colour[1] <- coloursPal[1]
-V(g)$colour[2] <- coloursPal[2]
-V(g)$colour[3] <- coloursPal[3]
-V(g)$colour[4] <- coloursPal[4]
-V(g)$colour[5] <- coloursPal[5]
-V(g)$colour[6] <- coloursPal[5]
-V(g)$colour[7] <- coloursPal[5]
-
-E(g)$width <- c(2, 2, 2, 2, 2, 6, 6, 6, 6, 6, 6, 6)
-
-E(g)$colour <- c("dimgrey", "dimgrey", "dimgrey", "dimgrey", "dimgrey", "black", "black", "black", "black", "black", "black", "black")
-
-pdf(paste0(saveIn, "multiFive.pdf"), font="Arial")
-plot.igraph(g,
-	layout=lo,
-	vertex.color=V(g)$colour,
-	vertex.size=50,
-	edges.color=E(g)$colour,
-	edges.size=E(g)$width,
-	vertex.label.cex=3.5,
-	vertex.label.font=2,
-	vertex.label.color="black"
-)
-dev.off()
-
-########################################## plot networks with coloured nodes MULTI THREE COMPLETE
-
-df <- data.frame("from"=c("1", "2", "3", "3", "4", "3", "3", "3.1", "3.1", "3.1", "3.2", "3.2", "3.1", "3.2"), 
-	"to"=c("2", "3", "4", "5", "5", "3.2", "3.1", "3.2", "5", "4", "5", "4", "2", "2"))
-
-meta <- data.frame("name"=c("1", "2", "3", "4", "5", "3.1", "3.2"),
-	"x"=c(5, 8, 12, 9, 7, 8, 11),
-	"y"=c(7, 5, 8, 12, 9, 7, 6))
-
-g <- graph.data.frame(df, directed=FALSE, vertices=meta)
-lo <- layout.norm(as.matrix(meta[,2:3]))
-
-V(g)$colour[1] <- coloursPal[1]
-V(g)$colour[2] <- coloursPal[2]
-V(g)$colour[3] <- coloursPal[3]
-V(g)$colour[4] <- coloursPal[4]
-V(g)$colour[5] <- coloursPal[5]
-V(g)$colour[6] <- coloursPal[3]
-V(g)$colour[7] <- coloursPal[3]
-
-E(g)$width <- c(2, 2, 2, 2, 2, 2, 6, 6, 6, 6, 6, 6, 6, 6)
-
-E(g)$colour <- c("dimgrey", "dimgrey", "dimgrey", "dimgrey", "dimgrey", "dimgrey", "black", "black", "black", "black", "black", "black", "black", "black")
-
-pdf(paste0(saveIn, "multiThree.pdf"), font="Arial")
-plot.igraph(g,
-	layout=lo,
-	vertex.color=V(g)$colour,
-	vertex.size=50,
-	edges.color=E(g)$colour,
-	edges.size=E(g)$width,
-	vertex.label.cex=3.5,
-	vertex.label.font=2,
-	vertex.label.color="black"
-)
-
-dev.off()
-
-###################################################################################################################
 ########################################## plot networks with coloured nodes MULTI FIVE COMPLETE FOR DEGREE EXAMPLE
 
 df <- data.frame("from"=c("1", "2", "3", "3", "4", "5", "5", "5.1", "5.1", "5.1", "5.2", "5.2"), 
