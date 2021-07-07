@@ -20,7 +20,10 @@ set.seed(131)
 
 # set paths
 patH <- "~/WNNets/"
-saveIn <- "~/WNNets/figures/"
+saveIn <- paste0(patH, "figures/")
+
+#check if saveIn directory exist, otherwise create it
+ifelse(dir.exists(saveIn), TRUE, dir.create(saveIn, recursive=T))
 
 # read data from R
 originalRes <- read.table(paste0(patH, "degreeS.csv"), header=T, sep="\t", stringsAsFactors=T)
